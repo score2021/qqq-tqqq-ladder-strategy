@@ -1,0 +1,22 @@
+{
+  "strategy_version": "research-20d-v1",
+  "data_source": "user-selected JSON; default Yahoo Finance",
+  "data_sha256": "64dddb17d11d2dabec415175de95e5d7fad67dc77d03a58750d4fe4bcd66f564",
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "start": "2020-01-02",
+  "end": "2026-10-16",
+  "cost_per_traded_dollar": 0.001,
+  "signal_reference": "max QQQ intraday high, prior20 completed sessions excluding signal day",
+  "execution": "next open; fractional synthetic total-return sleeve units",
+  "native_tiger_result": false,
+  "recorded_on": "2026-10-17",
+  "native_source_sha256": "9690ea73f03da5947662e4965f5663215646c256c30c365739fde65c33ee7783",
+  "research_engine_sha256": "768c273b10a439da9f9702e98c76f14f13187894ca4cc90590300ed77c067bd3",
+  "market_bars": {
+    "QQQ": 3719,
+    "TQQQ": 3719
+  },
+  "market_start": "2012-01-03",
+  "market_end": "2026-10-16"
+}
