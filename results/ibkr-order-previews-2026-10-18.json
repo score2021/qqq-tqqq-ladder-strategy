@@ -1,0 +1,72 @@
+{
+  "recorded_on": "2026-10-18",
+  "currency": "USD",
+  "source": "User-provided IBKR Client Portal order-preview screenshots; anonymized transcription",
+  "fee_field": "佣金与费用（估算）",
+  "status": "incomplete_pending_pure_fractional_notional_above_35_usd",
+  "confirmed_fee_model": null,
+  "executed_trade_commissions": false,
+  "previews": [
+    {
+      "symbol": "QQQ",
+      "side": "BUY",
+      "order_type": "LIMIT",
+      "quantity": 0.02,
+      "category": "fractional_only",
+      "limit_price_usd": 728.0,
+      "displayed_amount_usd": 14.56,
+      "estimated_commissions_and_fees_usd": 0.15,
+      "displayed_total_usd": 14.71
+    },
+    {
+      "symbol": "TQQQ",
+      "side": "BUY",
+      "order_type": "LIMIT",
+      "quantity": 0.2,
+      "category": "fractional_only",
+      "limit_price_usd": 73.82,
+      "displayed_amount_usd": 14.76,
+      "estimated_commissions_and_fees_usd": 0.15,
+      "displayed_total_usd": 14.91
+    },
+    {
+      "symbol": "TQQQ",
+      "side": "BUY",
+      "order_type": "LIMIT",
+      "quantity": 1.0,
+      "category": "whole_only",
+      "limit_price_usd": 73.82,
+      "displayed_amount_usd": 73.82,
+      "estimated_commissions_and_fees_usd": 0.35,
+      "displayed_total_usd": 74.17
+    },
+    {
+      "symbol": "TQQQ",
+      "side": "BUY",
+      "order_type": "LIMIT",
+      "quantity": 1.2,
+      "category": "mixed",
+      "limit_price_usd": 73.82,
+      "displayed_amount_usd": 88.58,
+      "estimated_commissions_and_fees_usd": 0.35,
+      "displayed_total_usd": 88.93
+    }
+  ],
+  "evidence_limits": [
+    "Both pure-fractional observed notionals are below USD 15; they do not identify billing for pure fractional orders above USD 35.",
+    "The mixed 1.2 TQQQ order previews at USD 0.35; adding separate whole-share and fractional-share commissions contradicts this sample.",
+    "The ordinary tiered schedule with a 1%-of-notional maximum reproduces all four displayed previews; this alone does not establish billing of higher-notional pure-fractional orders given conflicting public fractional disclosures.",
+    "All supplied samples are BUY previews, not executed fills or SELL previews.",
+    "Previously simulated fee scenarios must not be represented as verified actual account commissions."
+  ],
+  "next_preview": {
+    "symbol": "QQQ",
+    "side": "BUY",
+    "quantity": 0.1,
+    "order_type": "LIMIT",
+    "limit_price_usd": 728.0,
+    "notional_before_fees_usd": 72.8,
+    "estimated_commissions_and_fees_usd": null
+  },
+  "publication_scope": "Order values only. No account identifiers, balances, personal information, screenshots, local file paths or raw market data."
+}
