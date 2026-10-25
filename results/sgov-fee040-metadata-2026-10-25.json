@@ -1,0 +1,164 @@
+{
+  "strategy_version": "sma200-rolling20-guard-sgov-v1",
+  "study_date": "2026-10-25",
+  "capital": 10000,
+  "starts": [
+    "2019-01-02",
+    "2020-01-02",
+    "2021-01-04"
+  ],
+  "end": "2026-10-23",
+  "strategies": {
+    "qqq100": "QQQ全额买入持有",
+    "ladder": "原阶梯＋减半＋8%",
+    "a2": "A2（美元防守）",
+    "new_sgov": "最新策略（20日过滤＋SGOV）"
+  },
+  "fee_model": {
+    "currency": "USD",
+    "amount_per_actual_order": 0.4,
+    "includes_initial_order": true,
+    "charge_buy_and_sell_separately": true,
+    "charge_dividends": false,
+    "forced_terminal_sale": false,
+    "percent_friction": 0
+  },
+  "commission_booking": "deduct at each fill before resizing shares; reserve whole allocation batch fees; subsequent shares, dividends and NAV recomputed",
+  "units": {
+    "cagr_pct": "percent",
+    "mdd_pct": "negative percent of daily close NAV",
+    "sharpe_rf0": "annualized daily Sharpe, risk free zero",
+    "final": "USD",
+    "orders": "nonzero buy or sell orders",
+    "total_commission_usd": "orders * 0.4"
+  },
+  "benchmark": "QQQ initial 100% invested net of opening fee, fixed shares with dividends to cash; other three retain max(USD20,2% executable NAV)",
+  "signal": "QQQ completed close; SMA200 and rolling20 peak include signal day; enter requires C>1.01MA and C>.92peak20; MA<=.99 defensive, leveraged rolling exit<=.92 peak to QQQ; no 3-day confirmation",
+  "source_a2_commit": "094b0dd3ca56fa3781387d634596a3196e00fa22",
+  "source_ladder_commit": "05a7875700946d086f268747c0da1eb01a316982",
+  "data": {
+    "qqq_ibkr_from": "2021-10-25",
+    "tqqq_sgov_ibkr_from": "2021-10-27",
+    "earlier": "Yahoo",
+    "sgov_inception": "2020-05-26",
+    "sgov_first_bar": "2020-06-01",
+    "sgov_before_data": "USD CASH defense",
+    "sgov_cash_distributions": 75,
+    "distribution_source": "iShares issuer cash distribution table; QQQ/TQQQ Nasdaq actions",
+    "dividends": "ex-date receivable, payment-date cash, no automatic reinvestment"
+  },
+  "source_hashes": {
+    "mixed_market.json": "99556cdfe7db50343a009293d79e15ad07a10440fa8b9df9545c6fd074868444",
+    "sgov_market.json": "7b98d2bd6a95030d7569b84997bce5b0541f8267829ca9c93c4187dd3e3390ed",
+    "SGOV_issuer_distributions.json": "5e6e010df0c864fafd90c4c4e84999b0a40cab72f70d66d663705a0d299e325d"
+  },
+  "local_validation": {
+    "cases": 24,
+    "net_cases": 12,
+    "unit_tests": 51,
+    "checks": [
+      "0费12组精确复现上轮四策略摘要",
+      "24组全部实际订单逐单扣固定费，总费=订单数*固定费；资金股数非负，成交日在信号后",
+      "独立订单现金流账本重放24组全部交易日：现金/股份/分红应收/净值逐项一致",
+      "24组历史前缀与年度复利一致；费前费后信号/订单序列另外记录",
+      "仅改固定费用，没有改变原阶梯、A2、20日过滤、SGOV分红和历史可用边界"
+    ]
+  },
+  "fee_event_parity": [
+    {
+      "scheduled_start": "2019-01-02",
+      "strategy": "qqq100",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    },
+    {
+      "scheduled_start": "2019-01-02",
+      "strategy": "ladder",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    },
+    {
+      "scheduled_start": "2019-01-02",
+      "strategy": "a2",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    },
+    {
+      "scheduled_start": "2019-01-02",
+      "strategy": "new_sgov",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    },
+    {
+      "scheduled_start": "2020-01-02",
+      "strategy": "qqq100",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    },
+    {
+      "scheduled_start": "2020-01-02",
+      "strategy": "ladder",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    },
+    {
+      "scheduled_start": "2020-01-02",
+      "strategy": "a2",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    },
+    {
+      "scheduled_start": "2020-01-02",
+      "strategy": "new_sgov",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    },
+    {
+      "scheduled_start": "2021-01-04",
+      "strategy": "qqq100",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    },
+    {
+      "scheduled_start": "2021-01-04",
+      "strategy": "ladder",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    },
+    {
+      "scheduled_start": "2021-01-04",
+      "strategy": "a2",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    },
+    {
+      "scheduled_start": "2021-01-04",
+      "strategy": "new_sgov",
+      "same_order_sequence": true,
+      "same_signal_events": true
+    }
+  ],
+  "limitations": [
+    "no spread, slippage, personal tax or USD cash interest",
+    "next-open full fills and spendable proceeds assumed",
+    "overlapping already-researched starts, not independent OOS",
+    "raw data and full local cost-accounting runner not published here",
+    "existing repository signal/execution code still prior versions; latest policy not deployed"
+  ],
+  "published_sha256": {
+    "README.md": "750003103934170faffa61366b2e2cd9ac22e50431579773047178b35affccd6",
+    "docs/sgov-strategy.md": "7ea3729f654df4a8b20bfc92394dd409e4f8d152a9a0e0dd2246debd90cb91c3",
+    "docs/sgov-backtests.md": "3dda158d7e02f23adf9bd47118b6622cf0074d2f1c845fa6f5f6c846d869e4be",
+    "docs/history-readme-before-sgov.md": "fbe3a9157ec900f58edbe27f1ad3fbcf8438aef93c59a64fa7903df1e2a1a6d8",
+    "assets/sgov-fee040-equity-by-start.png": "34ce4867f8976d54867cb95cc557b468c4125ca003e7f20f0c82f80a32fbb21e",
+    "assets/sgov-fee040-drawdown-by-start.png": "cb9f032195212b930c233cf4c20e9410298170ff588e61acfed8765ff4933636",
+    "assets/sgov-fee040-annual-returns-2019.png": "80ef595b447e44aa5c01f29b87ddfe2e53814d4d38a11f997a67e57a7fabbcc0",
+    "assets/sgov-fee040-equity-drawdown-by-start.png": "d08517be7c7a7e5ede535694602bb34c5af03c39119eb28d9c140e8f0be6c848",
+    "assets/sgov-fee040-equity-drawdown-by-start.svg": "e6af4c4aa1ce5daba974e4142f6943f88ccf6002427eafb8afbc330f909cd074",
+    "results/sgov-fee040-comparison-2026-10-25.csv": "3a62fce680b6f907f8b2ab7261e7219c6ad740f773b84cf3a5b043290ed66eab",
+    "results/sgov-fee040-annual-2026-10-25.csv": "3f09fdd6eb992c788fc55f93c7a2503a38e70af07f13a8b45da8b994d41033af",
+    "results/sgov-fee040-fee-impact-2026-10-25.csv": "f32e2b7a6ab69b0327708fa456c0dd759bd05d14480472d906bf203d901a3f99",
+    "results/sgov-fee040-annual-orders-2026-10-25.csv": "6d70e6cf88143e525cdec807892c0850f261a4e4048d091e94f1f39fd132f476",
+    "results/sgov-fee040-drawdown-2026-10-25.csv": "124946d13e916083438bf5cfee1bdcde6516ff3c24af07409f6fd543ba9c04e1"
+  }
+}
