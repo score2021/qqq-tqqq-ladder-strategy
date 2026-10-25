@@ -1,0 +1,95 @@
+{
+  "strategy_version": "sma200-mixed-rolling20-v2",
+  "calculated_on": "2026-10-25",
+  "capital_usd": 10000,
+  "starts": [
+    "2019-01-02",
+    "2020-01-02",
+    "2021-01-04"
+  ],
+  "end": "2026-10-23",
+  "cases": {
+    "a2_mixed_rolling20": "A新版",
+    "user_qqq_rolling20": "A旧版",
+    "repo_ladder20": "B 原阶梯",
+    "qqq": "C QQQ持有",
+    "previous_60_entry_peak": "D 上次规则"
+  },
+  "rule_source": "User approved latest A ordinary60/40 addition; all other A exits retained; ordinary >70% cap active, BOOST exempt.",
+  "parameters": {
+    "sma_sessions": 200,
+    "entry_multiplier_strict_gt": 1.01,
+    "cash_exit_multiplier_lte": 0.99,
+    "rolling_peak_sessions": 20,
+    "signal_day_included": true,
+    "trailing_exit_multiplier_lte": 0.92,
+    "ordinary_tqqq_investable_weight": 0.6,
+    "boost_tqqq_investable_weight": 1.0,
+    "ordinary_cap_account_weight_strict_gt": 0.7,
+    "reserve_usd_min": 20,
+    "reserve_pct_min": 0.02,
+    "simulated_share_precision": 1e-06
+  },
+  "execution": "Complete daily close signal, next session open assumed full fill; initial QQQ at first open, indicators only prewarmed; sell then buy.",
+  "accounting": "Nominal price/split quantities matched; ex-date dividend receivable, payment-date cash, no reinvestment; no cash interest, taxes or account borrowing.",
+  "headline_costs": "Broker commission, slippage and tax excluded; historical ETF-price effects not separately deducted.",
+  "friction_stress": {
+    "assumed_each_traded_leg_bps": 10,
+    "actual_ibkr_fee_model": false,
+    "a2_cagr_pct_by_start": [
+      46.36828,
+      44.85807,
+      41.03496
+    ]
+  },
+  "metrics": {
+    "cagr": "Actual first/last calendar-day difference /365.25",
+    "mdd": "Daily closing NAV including initial capital; not intraday loss",
+    "sharpe": "Daily returns, std ddof=1, sqrt252, risk_free0",
+    "orders": "Each buy/sell leg including initialization"
+  },
+  "data": {
+    "ibkr_first_sessions": {
+      "QQQ": "2021-10-25",
+      "TQQQ": "2021-10-27"
+    },
+    "earlier_ohlc": "Yahoo Finance",
+    "corporate_actions": "Nasdaq and source records",
+    "mixed_market_sha256": "99556cdfe7db50343a009293d79e15ad07a10440fa8b9df9545c6fd074868444",
+    "yahoo_market_sha256": "079e8a4875439b88fad04f17716326dd7200f4d0b09f71b9a093cc7ee2bb9e3a",
+    "retained_inconsistent_ohlc_bars": 5,
+    "all_yahoo_max_abs_cagr_delta_percentage_points": 0.012546540000002437,
+    "raw_market_data_distributed": false
+  },
+  "validation": {
+    "unit_tests": 12,
+    "signal_statements": 33,
+    "signal_statement_coverage_pct": 100,
+    "local_accounting_adapter_statements": 54,
+    "combined_statement_coverage_pct": 100,
+    "coverage_type": "statement, not branch",
+    "legacy_control_cases_reproduced": 12,
+    "independent_d_loop_rolling20_nav_parity": true,
+    "repository_original_commit": "05a7875700946d086f268747c0da1eb01a316982",
+    "repository_event_counts_by_start": [
+      25,
+      22,
+      16
+    ],
+    "same_signal_reentry": false,
+    "live_execution_verified": false
+  },
+  "publication_scope": "Strategy docs, signal code/test, aggregate results and generated plot only. Frozen raw bars, per-account screenshots, local paths and local portfolio runner excluded; published files alone do not reproduce full frozen backtest.",
+  "artifacts_sha256": {
+    "README.md": "f408af592cb9660304197b6c09b20b4c4d7f30bde07f471895d5b2c0fad2ecf7",
+    "docs/a2-strategy.md": "7e0ad7cc1ecc7a8b972bc698d0ec80880ebcca13f89411d424094a31ad8b61e1",
+    "docs/a2-backtests.md": "41837ccb96365ffa369b6a02934def477f628427320c719f1d7302b7eb214eab",
+    "docs/history-readme-before-a2.md": "b8c633c39f3555b92b3769b4bf288ebdd894ec595ee339531232a7707c6f763b",
+    "research/sma200_rolling20.py": "47289b899c198689f6cd525a17f476ebbf51be9da49d5b29c36ab4e996dbe056",
+    "research/sma200_mixed_rolling20.py": "cc6f467b8f9726d2730b27a12cbda02bb131db6ce048d1a747d03726bc5251bc",
+    "tests/test_sma200_mixed_rolling20.py": "71b3d74e7717471f8c1f9dbcda00b8e71823d33031b91ac1020b63b322ed3211",
+    "results/a2-comparison-2026-10-25.csv": "cf70c4b9973d11f704a437f7438794e24b5ea584d56a2d7e5889962db6086ab6",
+    "results/a2-annual-2026-10-25.csv": "b27faf40553f7efec29987d1a37731ac2e1d9a6193762c6d258c1fdd744dabb4",
+    "assets/a2-equity-drawdown-by-start.png": "1c674203e04d529a888f340f1e237703eafa75e4e294a3550f8b83ee6eb962eb"
+  }
+}
