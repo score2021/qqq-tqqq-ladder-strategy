@@ -1,0 +1,25 @@
+{
+  "snapshot": {
+    "binding_ref": "SET_BINDING_REFERENCE",
+    "at": "2026-10-26T13:35:00+00:00",
+    "positions": {
+      "QQQ": "98",
+      "TQQQ": "0",
+      "SGOV": "0"
+    },
+    "cash": "200",
+    "settled_available_usd": "200",
+    "marks": {
+      "QQQ": "100",
+      "TQQQ": "50",
+      "SGOV": "100"
+    },
+    "orders": [],
+    "instructions": [],
+    "orders_complete": true,
+    "instructions_complete": true
+  },
+  "phase": "QQQ_ONLY",
+  "confirmed": true,
+  "recovery_eligible": false
+}

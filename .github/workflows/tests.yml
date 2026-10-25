@@ -1,0 +1,16 @@
+name: Offline assisted trading checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-system.txt -r requirements-dev.txt
+      - run: python -m compileall -q trading_system research strategies tests
+      - run: python -m coverage run --source=trading_system -m unittest discover -s tests -v
+      - run: python -m coverage report --fail-under=80

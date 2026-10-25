@@ -6,3 +6,11 @@ data/
 runs/
 .env
 *.log
+.coverage*
+htmlcov/
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite.lock
+config/*.local.json
