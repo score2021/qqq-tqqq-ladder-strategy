@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+project_dir="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+export CODEX_HOME="$project_dir/codex-home"
+cd "$project_dir/app"
+exec "$project_dir/bin/codex" "$@"

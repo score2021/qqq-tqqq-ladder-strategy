@@ -1,0 +1,17 @@
+[Unit]
+Description=QQQ TQQQ read-only strategy calculation and WeCom notification
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/apps/qqq-tqqq-strategy/app
+ExecStart=%h/apps/qqq-tqqq-strategy/.venv/bin/python -m cloud_runner --root %h/apps/qqq-tqqq-strategy tick
+Environment=PYTHONUNBUFFERED=1
+UMask=0077
+TimeoutStartSec=750
+KillMode=control-group
+NoNewPrivileges=true
+PrivateTmp=true
+StandardOutput=journal
+StandardError=journal

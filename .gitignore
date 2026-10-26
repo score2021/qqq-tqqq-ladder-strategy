@@ -14,3 +14,11 @@ htmlcov/
 *.sqlite-shm
 *.sqlite.lock
 config/*.local.json
+
+# 云端私密运行产物，源码和合成配置样例照常提交
+/config/wecom-webhook
+/codex-home/
+/state/
+/logs/
+/reports/
+/backups/

@@ -1,0 +1,55 @@
+{
+  "signal_day": "2026-10-23",
+  "computed_at": "2026-10-26T13:21:00+00:00",
+  "phase": "MIXED",
+  "decision": null,
+  "price_decision": {
+    "phase": "MIXED",
+    "reason": "HOLD",
+    "weights": null
+  },
+  "indicators": {
+    "close": "700",
+    "sma200": "675",
+    "peak20": "750"
+  },
+  "thresholds": {
+    "ma_entry": "681.75",
+    "ma_defense": "668.25",
+    "rolling_exit": "690"
+  },
+  "allocation": {
+    "confirmed": true,
+    "scope_confirmed": true,
+    "weights": {
+      "QQQ": ".5",
+      "TQQQ": ".2",
+      "SGOV": "0",
+      "USD": ".3"
+    },
+    "values_usd": {
+      "QQQ": "5000",
+      "TQQQ": "2000",
+      "SGOV": "0",
+      "USD": "3000"
+    },
+    "total_usd": "10000",
+    "settled_cash_usd": "3000"
+  },
+  "cash_review": {
+    "status": "REVIEW",
+    "reason": "ADVISORY_ONLY",
+    "asset": "QQQ",
+    "reserve_usd": "200.00",
+    "budget_before_fees_usd": "2800.00",
+    "preserve_tqqq": true,
+    "executable": false
+  },
+  "open_order_count": 0,
+  "blockers": [
+    "READ_ONLY_NOTIFICATION",
+    "CLOSE_HOLDINGS_NOT_RECONCILED",
+    "DRIFT_REQUIRES_CONFIRMED_CLOSE_NAV"
+  ],
+  "executable_orders": []
+}

@@ -1,0 +1,12 @@
+[Unit]
+Description=Daily strategy review at 21:20 Singapore time
+
+[Timer]
+OnCalendar=*-*-* 21:20:00 Asia/Singapore
+Persistent=true
+RandomizedDelaySec=0
+AccuracySec=10s
+Unit=qqq-tqqq-strategy.service
+
+[Install]
+WantedBy=timers.target

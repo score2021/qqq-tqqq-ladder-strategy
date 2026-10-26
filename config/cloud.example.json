@@ -1,0 +1,15 @@
+{
+  "phase": "MIXED",
+  "recovery_eligible": false,
+  "mode": "READ_ONLY",
+  "cash_scope_confirmed": false,
+  "binding_tail": null,
+  "retain_existing_orders": false,
+  "portfolio_scope": "ALL_EXCEPT_IREN",
+  "excluded_contract_ids": [
+    526906130
+  ],
+  "order_policy": "REPORT_ACTUAL_WORKING_ORDERS",
+  "cash_allocation_policy": "EXCESS_CASH_TO_QQQ_IN_NORMAL_STATE",
+  "schedule_policy": "SINGAPORE_2120_US_TRADING_DAYS"
+}

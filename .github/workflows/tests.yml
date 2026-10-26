@@ -11,6 +11,6 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install -r requirements-system.txt -r requirements-dev.txt
-      - run: python -m compileall -q trading_system research strategies tests
-      - run: python -m coverage run --source=trading_system -m unittest discover -s tests -v
+      - run: python -m compileall -q trading_system cloud_runner research strategies tests
+      - run: python -m coverage run --source=trading_system,cloud_runner -m unittest discover -s tests -v
       - run: python -m coverage report --fail-under=80
