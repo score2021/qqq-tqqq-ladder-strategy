@@ -1,5 +1,12 @@
 # QQQ / TQQQ / SGOV：20日过滤＋SMA200缓冲
 
+## ✨ 功能概览
+
+- 研究 QQQ / TQQQ 策略、过滤规则与回测结果。
+- 保留不同策略版本、成本与统计口径，便于复核比较。
+- 包含辅助交易系统、云端运行及通知相关代码与设计。
+> 功能概览由 [Lobe Readme Wizard](https://github.com/lobehub/lobe-readme-wizard) 的 Markdown 生成器生成，内容依据本仓库资料整理。
+
 最新研究策略：QQQ完整收盘同时高于SMA200上方1%及20日峰值的92%才新买TQQQ；普通配置60% TQQQ＋40% QQQ，均线防守后的首次恢复全配可投资部分TQQQ；均线下方1%转SGOV防守，20日峰值回落8%清TQQQ转QQQ。
 
 ## 辅助交易系统：代码与设计已落地
